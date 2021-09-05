@@ -1,10 +1,10 @@
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React from 'react';
 import { useParams } from 'react-router';
+import { archiveOutline, archiveSharp, arrowRedoOutline, arrowRedoSharp, syncOutline, syncSharp } from 'ionicons/icons';
 import ExploreContainer from '../components/ExploreContainer';
 import './Page.css';
-
 const Page: React.FC = () => {
-
   const { name } = useParams<{ name: string; }>();
 
   return (
@@ -14,7 +14,6 @@ const Page: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>{name}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -24,7 +23,22 @@ const Page: React.FC = () => {
             <IonTitle size="large">{name}</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name={name} />
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <IonButton expand="block" size="large">
+        <IonIcon slot="start" ios={arrowRedoOutline} md={arrowRedoSharp} />
+          TOMAR PEDIDO
+        </IonButton>
+        <IonButton expand="block" size="large">
+        <IonIcon slot="start" ios={archiveOutline} md={archiveSharp} />
+          REPORTE
+        </IonButton>
+        <IonButton expand="block" size="large">
+        <IonIcon slot="start" ios={syncOutline} md={syncSharp} />
+          SINCRONIZAR
+        </IonButton>
       </IonContent>
     </IonPage>
   );
