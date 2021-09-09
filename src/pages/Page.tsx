@@ -33,11 +33,15 @@ const Page: React.FC = () => {
         </IonButton>
         <IonButton expand="block" size="large">
         <IonIcon slot="start" ios={archiveOutline} md={archiveSharp} />
-          REPORTE
+          CREAR CLIENTE
         </IonButton>
         <IonButton expand="block" size="large">
         <IonIcon slot="start" ios={syncOutline} md={syncSharp} />
-          SINCRONIZAR
+          CREAR PRODUCTO
+        </IonButton>
+        <IonButton expand="block" size="large">
+        <IonIcon slot="start" ios={archiveOutline} md={archiveSharp} />
+          REPORTE
         </IonButton>
       </IonContent>
     </IonPage>
