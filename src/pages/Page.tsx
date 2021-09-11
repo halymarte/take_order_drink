@@ -1,18 +1,28 @@
 import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 import { useParams } from 'react-router';
-import { archiveOutline, archiveSharp, arrowRedoOutline, arrowRedoSharp, syncOutline, syncSharp } from 'ionicons/icons';
+import { archiveOutline, archiveSharp, arrowRedoOutline, arrowRedoSharp,
+   syncOutline, syncSharp, addCircleOutline, addCircleSharp, bagAddOutline, bagAddSharp } from 'ionicons/icons';
 import ExploreContainer from '../components/ExploreContainer';
 import './Page.css';
+
 const Page: React.FC = () => {
   const { name } = useParams<{ name: string; }>();
+
+  const handleCreateCustomer = () => {
+    window.location.href = "/customers"
+  };
+
+  const handleCustomerList = () => {
+    window.location.href = "/customerList"
+  }
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonMenuButton />
+            <IonMenuButton  />
           </IonButtons>
         </IonToolbar>
       </IonHeader>
@@ -27,16 +37,16 @@ const Page: React.FC = () => {
         <br/>
         <br/>
         <br/>
-        <IonButton expand="block" size="large">
+        <IonButton expand="block" size="large" onClick={handleCustomerList} >
         <IonIcon slot="start" ios={arrowRedoOutline} md={arrowRedoSharp} />
           TOMAR PEDIDO
         </IonButton>
-        <IonButton expand="block" size="large">
-        <IonIcon slot="start" ios={archiveOutline} md={archiveSharp} />
+        <IonButton expand="block" size="large" onClick={handleCreateCustomer}>
+        <IonIcon slot="start" ios={addCircleOutline}  md={addCircleSharp} />
           CREAR CLIENTE
         </IonButton>
         <IonButton expand="block" size="large">
-        <IonIcon slot="start" ios={syncOutline} md={syncSharp} />
+        <IonIcon slot="start" ios={bagAddOutline} md={bagAddSharp} />
           CREAR PRODUCTO
         </IonButton>
         <IonButton expand="block" size="large">
