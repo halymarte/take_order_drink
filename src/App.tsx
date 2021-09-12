@@ -4,6 +4,7 @@ import { Redirect, Route } from 'react-router-dom';
 import Login from './pages/login/Login';
 import Menu from './components/Menu';
 import Page from './pages/Page';
+import AddPedidos from './pages/AddPedidos/AddPedidos';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -28,10 +29,10 @@ import './theme/variables.css';
 const App: React.FC = () => {
   return (
     <IonApp>
-
       <IonReactRouter>
       <IonRouterOutlet id="main">
           <Route path="/Login" component={Login} exact={true} />
+          <Route path='/addpedidos' component={AddPedidos} exact={true} />
           <Redirect to="/Login" />
           <IonSplitPane contentId="main">
           <Menu />
