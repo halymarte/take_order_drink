@@ -38,10 +38,10 @@ const Login: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-
+        <br/>
         <div className="vertical-center">
           <div className="center">
-           <img src="../assets/imagen/login.png" width={'20%'}/>
+           <img src="../assets/imagen/login.png" width={'30%'}/>
           </div>   
         </div>
       

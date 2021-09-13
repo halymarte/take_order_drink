@@ -6,6 +6,9 @@ import Menu from './components/Menu';
 import Page from './pages/Page';
 import AddPedidos from './pages/AddPedidos/AddPedidos';
 
+import RegisterCustomer from './pages/customers/Customer';
+import CustomerList from './pages/customerList/CustomerList';
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -30,23 +33,28 @@ const App: React.FC = () => {
   return (
     <IonApp>
       <IonReactRouter>
-      <IonRouterOutlet id="main">
+        <IonRouterOutlet id="main">
           <Route path="/Login" component={Login} exact={true} />
           <Route path='/addpedidos' component={AddPedidos} exact={true} />
           <Redirect to="/Login" />
           <IonSplitPane contentId="main">
-          <Menu />
-            <Route path="/page" exact={true}>
-            </Route>
-            {/* <Route path="/page/:name"> */}
-              <Page />
-            {/* </Route> */}
-        
-        </IonSplitPane>
-      </IonRouterOutlet>
+            <Menu />
+            <Route path="/page" exact={true} />
+                <Route path="/login" component={Login} exact />
+                <Route exact path="/" render={() => <Redirect to="/login" />} />
+                < Menu />
+                <Route path="/page" component={Page} exact>
+                </Route>
+          </IonSplitPane>
+              <Route path="/customers" component={RegisterCustomer} exact />
+              <Route path="/customerList" component={CustomerList} exact />
+              {/* <Route path="/page/:name"> */}
+              {/* <Login /> */}
+              {/* </Route> */}
+
+        </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>
   );
 };
-
 export default App;

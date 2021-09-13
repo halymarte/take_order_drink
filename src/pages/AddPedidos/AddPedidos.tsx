@@ -6,8 +6,6 @@ import {
     IonContent,
     IonGrid,
     IonHeader,
-    IonIcon,
-    IonMenuButton,
     IonPage,
     IonRow,
     IonTitle,
@@ -15,7 +13,6 @@ import {
 } from '@ionic/react';
 
 import Item from '../../components/Item';
-import { arrowBack, backspace } from 'ionicons/icons';
 
 
 
@@ -25,7 +22,6 @@ const AddPedidos: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/" />
                     </IonButtons>
