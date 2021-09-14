@@ -11,21 +11,16 @@ import {
 } from '@ionic/react';
 import React from 'react';
 import { useParams } from 'react-router';
-import { archiveOutline, archiveSharp, arrowRedoOutline, arrowRedoSharp,
+import { archiveOutline, archiveSharp, arrowRedoOutline, arrowRedoSharp, listOutline, listSharp,
    syncOutline, syncSharp, addCircleOutline, addCircleSharp, bagAddOutline, bagAddSharp } from 'ionicons/icons';
 import ExploreContainer from '../components/ExploreContainer';
 
 import { Link } from 'react-router-dom';
-
 import './Page.css';
 
 
 const Page: React.FC = () => {
   const { name } = useParams<{ name: string; }>();
-
-  const handleCreateCustomer = () => {
-    window.location.href = "/customers"
-  };
 
   const handleCustomerList = () => {
     window.location.href = "/customerList"
@@ -48,16 +43,17 @@ const Page: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <br />
-        <br />
-        <br />
-        <br />
         <IonButton expand="block" size="large">
           <IonIcon slot="start" ios={arrowRedoOutline} md={arrowRedoSharp} />
             <Link style={{color: 'white', textDecoration:'none'}} to="/addpedidos"> TOMAR PEDIDO </Link> 
         </IonButton>
-        <IonButton expand="block" size="large" onClick={handleCreateCustomer}>
-        <IonIcon slot="start" ios={addCircleOutline}  md={addCircleSharp} />
-          CREAR CLIENTE
+        <IonButton expand="block" size="large" onClick={handleCustomerList}>
+        <IonIcon slot="start" ios={listOutline}  md={listSharp} />
+           CLIENTES
+        </IonButton>
+        <IonButton expand="block" size="large">
+          <IonIcon slot="start" ios={listOutline} md={listSharp} />
+            <Link style={{color: 'white', textDecoration:'none'}} to="/productList"> PRODUCTOS </Link> 
         </IonButton>
         <IonButton expand="block" size="large">
           <IonIcon slot="start" ios={archiveOutline} md={archiveSharp} />

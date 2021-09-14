@@ -23,13 +23,11 @@ import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp
 import { useParams } from 'react-router';
 //interface LoginProps {}
 
-const RegisterCustomer: React.FC = () => {
+const AddCustomer: React.FC = () => {
   const router = useIonRouter();
-  const [shopName, setShopName] = useState<string>();
-  const [customerName, setCustomerName] = useState<string>();
-  const [lastName, setLastName] = useState<string>();
-  const [documentId, setDocumentId] = useState<string>();
-  const [address, setAddress] = useState<string>();
+  const [description, setDescription] = useState<string>();
+  const [prices, setPrices] = useState<string>();
+
   const handleRegister = () => {   	
      // window.location.href = "/page"
   };  
@@ -41,33 +39,20 @@ const RegisterCustomer: React.FC = () => {
         <IonButtons slot="start">
               <IonBackButton defaultHref="/page" />
           </IonButtons>
-          <IonTitle>Registrar Cliente</IonTitle>
+          <IonTitle>Registrar Producto</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
           <br />
           <IonItem>
-                <IonInput value={shopName} placeholder="Nombre Comercial" onIonChange={e => setShopName(e.detail.value!)}></IonInput>
+                <IonInput value={description} placeholder="Descripcion" onIonChange={e => setDescription(e.detail.value!)}></IonInput>
           </IonItem>
           <br />
           <IonItem>
-                <IonInput value={customerName} placeholder="Nombre" onIonChange={e => setCustomerName(e.detail.value!)}></IonInput>
+                <IonInput value={prices} placeholder="Precio" onIonChange={e => setPrices(e.detail.value!)}></IonInput>
           </IonItem>
           <br />
-          <IonItem>
-                <IonInput value={lastName} placeholder="Apellido" onIonChange={e => setLastName(e.detail.value!)}></IonInput>
-          </IonItem>
-          <br />
-          <IonItem>
-                <IonInput value={documentId} placeholder="Cédula" onIonChange={e => setDocumentId(e.detail.value!)}></IonInput>
-          </IonItem>
-          <br />
-          <IonItem>
-                <IonInput value={address} placeholder="Dirección" onIonChange={e => setAddress(e.detail.value!)}></IonInput>
-          </IonItem>
-
-          <br />
-          <br />
+              <br />
         <IonButton expand="block"  onClick={handleRegister}>
           Registra
         </IonButton>
@@ -83,5 +68,5 @@ const RegisterCustomer: React.FC = () => {
   );
 };
 
-export default RegisterCustomer;
+export default AddCustomer;
 

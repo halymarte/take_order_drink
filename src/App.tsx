@@ -8,7 +8,8 @@ import AddPedidos from './pages/AddPedidos/AddPedidos';
 
 import RegisterCustomer from './pages/customers/Customer';
 import CustomerList from './pages/customerList/CustomerList';
-
+import ProductList from './pages/productList/ProductList';
+import AddProduct from './pages/addProduct/AddProduct';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -46,8 +47,11 @@ const App: React.FC = () => {
                 <Route path="/page" component={Page} exact>
                 </Route>
           </IonSplitPane>
+          
               <Route path="/customers" component={RegisterCustomer} exact />
               <Route path="/customerList" component={CustomerList} exact />
+              <Route path="/productList" component={ProductList} exact />
+              <Route path="/addProduct" component={AddProduct} exact />
               {/* <Route path="/page/:name"> */}
               {/* <Login /> */}
               {/* </Route> */}

@@ -52,36 +52,25 @@ const Menu: React.FC = () => {
   const location = useLocation();
 
   const handleCreateCustomer = () => {
-
-    console.log('hello');
     window.location.href = "./login"
   };
   return (
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>HandyBusiness</IonListHeader>
-          <IonNote>Haly Marte</IonNote>
-          {/* {appPages.map((appPage, index) => {
-            return ( */}
+          <IonListHeader>TakeDrinkOrder</IonListHeader>
+          <IonNote></IonNote>
+          {appPages.map((appPage, index) => {
+            return (
               <IonMenuToggle  autoHide={false}>
-                {/* {console.log(appPage.url)} */}
-                {/* <a href="#" onClick={handleCreateCustomer}> log out</a>
                 <IonItem  routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
                   <IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
                   <IonLabel>{appPage.title}</IonLabel>
-                </IonItem> */}
-
-<IonItem> 
-  <IonButton expand="block" size="large" onClick={handleCreateCustomer}>
-              <IonIcon slot="start"  />
-                CREAR CLIENTE
-              </IonButton>
-              </IonItem>
+                </IonItem>
                
               </IonMenuToggle>
-            {/* );
-          })} */}
+            );
+          })}
         </IonList>
       </IonContent>
     </IonMenu>
